@@ -5,8 +5,13 @@ import modle.*;
 import thread.*;
 import adapter.*;
 
+
+/**
+ * 我成功了？
+ */
 public class Main
 {
+
 	public static void main(String[] args)
 	{
 	
