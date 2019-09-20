@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7aa4d03b-aa59-4b22-a012-8e2e6c5b51f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modle/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/m_interface/Command.java" afterDir="false" />
-    </list>
+    <list default="true" id="7aa4d03b-aa59-4b22-a012-8e2e6c5b51f5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +108,7 @@
       <workItem from="1568524551240" duration="4599000" />
       <workItem from="1568719433953" duration="1899000" />
       <workItem from="1568727893364" duration="188000" />
-      <workItem from="1568990136479" duration="928000" />
+      <workItem from="1568990136479" duration="1172000" />
     </task>
     <task id="LOCAL-00001" summary="i">
       <created>1568727993926</created>
@@ -121,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568727993926</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add command interface">
+      <created>1568991210328</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568991210328</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +145,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="i" />
-    <option name="LAST_COMMIT_MESSAGE" value="i" />
+    <MESSAGE value="add command interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="add command interface" />
   </component>
 </project>
