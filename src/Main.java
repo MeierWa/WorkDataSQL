@@ -7,7 +7,7 @@ import adapter.*;
 
 
 /**
- * 我成功了？
+ * 我成功了？1
  */
 public class Main
 {
