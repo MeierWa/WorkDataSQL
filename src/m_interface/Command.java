@@ -1,9 +1,9 @@
 package m_interface;
 
-/**Command 操作命令
- *数据的新建、添加、修改、删除
- */
- 
-public class Command
+/**命令接收者
+*/
+public interface Command
 {
+	void execute();//执行
+	void undo();//撤销
 }

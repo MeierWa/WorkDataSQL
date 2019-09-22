@@ -22,9 +22,9 @@ public class WriteDataThread implements Runnable
 		try
 		{
 			mfc.write(wds);
-			System.out.println("ok");
 		}
-		catch (Exception e) {
+		catch (Exception e)
+		{
 			e.printStackTrace();
 		}
 	}

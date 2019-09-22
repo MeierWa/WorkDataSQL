@@ -1,8 +1,6 @@
 package io;
 import java.io.*;
 import modle.*;
-
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 import middleware.*;
 import tool.*;
@@ -25,10 +23,10 @@ public class MindFileControl
 	/**文件读取
 	*
 	*/
-	public int readFile ( String path, String fileName, DataHelper helper,ArrayList<JSONObject> al) throws JSONException, IOException{
-		MindFileControl.path =path+"/"+fileName;
+	public int readFile ( String path, String fileName, DataHelper helper,ArrayList<JSONObject> al) throws JSONException, FileNotFoundException, IOException{
+		this.path=path+"/"+fileName;
 		File f = new File(path+"/"+fileName);
-		File bat_f = new File(path+"/"+ String.copyValueOf(fileName.toCharArray(),0,fileName.lastIndexOf("."))+".bat");
+		File bat_f = new File(path+"/"+fileName.copyValueOf(fileName.toCharArray(),0,fileName.lastIndexOf("."))+".bat");
 		if(!f.exists()){
 			if(bat_f.exists()){
 				f=bat_f;
@@ -41,7 +39,7 @@ public class MindFileControl
 		FileInputStream fis;
 		InputStreamReader isr;
 			fis=new FileInputStream(f);
-			isr=new InputStreamReader(fis, StandardCharsets.UTF_8);
+			isr=new InputStreamReader(fis,"UTF-8");
 			//格式是否匹配
 			int len=0;
 			char[] fileHead=new char[8];
@@ -78,7 +76,7 @@ public class MindFileControl
 	**文件写入
 	*/
 	public int write(ArrayList<WorkData> src_wds) throws Exception{
-		String str_bat_file= String.copyValueOf(path.toCharArray(),0,path.lastIndexOf("."));
+		String str_bat_file=path.copyValueOf(path.toCharArray(),0,path.lastIndexOf("."));
 		//创建bat文件
 		File f = new File(path);
 		File f_out = new File(str_bat_file+".bat");
@@ -92,9 +90,9 @@ public class MindFileControl
 		try
 		{
 			fis = new FileInputStream(f);
-			isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+			isr = new InputStreamReader(fis,"UTF-8");
 			fos = new FileOutputStream(f_out);
-			osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
+			osw = new OutputStreamWriter(fos,"UTF-8");
 			char[] datas=new char[1024*50];
 			
 			int len=0;
@@ -121,7 +119,7 @@ public class MindFileControl
 		//文件头创建
 		char[] fileHead = FileHeadCreater.toFileHead(src_wds.size());
 			fos = new FileOutputStream(f);
-			osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
+			osw = new OutputStreamWriter(fos,"UTF-8");
 			//文件头写入
 			osw.write(fileHead);
 			//写入jos源数据

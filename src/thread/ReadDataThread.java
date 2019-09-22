@@ -5,6 +5,7 @@ import middleware.*;
 import java.util.*;
 import org.json.*;
 import adapter.*;
+import java.io.*;
 
 public class ReadDataThread implements Runnable
 {
@@ -14,7 +15,7 @@ public class ReadDataThread implements Runnable
 	private ArrayList datas;
 	private DataHelper dh;
 	private FeatureAdapter adp=null;
-
+	
 	
 	public ReadDataThread(MindFileControl mfc,ArrayList<WorkData> datas,DataHelper dh,FeatureAdapter adp){
 		this.mfc=mfc;
@@ -34,15 +35,17 @@ public class ReadDataThread implements Runnable
 		}
 		try
 		{
-			mfc.readFile("D:\\code\\MindFile\\OT", "sss.txt", dh, jsArray);
+			mfc.readFile("/storage/emulated/0/OT", "sss.txt", dh, jsArray);
 			JSONObject jo=(JSONObject)jsArray.get(0);
 			//使用适配器转换
 			for(JSONObject jio:jsArray){
 				datas.add(adp.toWorkData(jio));
 			}
 		}
-		catch (Exception e)
+		catch (JSONException e)
 		{
+			e.printStackTrace();
+		}catch(IOException e){
 			e.printStackTrace();
 		}
 

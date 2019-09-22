@@ -23,7 +23,7 @@ public class WorkData
 	public void setProcedures(ArrayList<Procedure> pcds){
 		procedures=pcds;
 	}
-	public ArrayList getProcedures(){
+	public ArrayList<Procedure> getProcedures(){
 		return procedures;
 	}
 	

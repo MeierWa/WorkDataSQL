@@ -1,17 +1,14 @@
 import java.util.*;
 import io.*;
+import java.io.*;
 import middleware.*;
 import modle.*;
 import thread.*;
+import org.json.*;
 import adapter.*;
 
-
-/**
- * 我成功了？1111
- */
 public class Main
 {
-
 	public static void main(String[] args)
 	{
 	
@@ -23,6 +20,7 @@ public class Main
 		FeatureAdapter adp=new FeatureAdapter();
 		//读取数据
 		new Thread(new ReadDataThread(mfc,workDatas,dh,adp)).start();
+		
 		try
 		{
 			Thread.sleep(1000);

@@ -42,9 +42,11 @@ public class Procedure{
 		return this.size;
 	}
 
-	public Procedure(String color){
+	public Procedure(String name,String color){
+		this.name=name;
 		this.color=color;
 	}
+	public Procedure(){}
 
 	@Override
 	public String toString()

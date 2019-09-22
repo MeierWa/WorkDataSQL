@@ -27,7 +27,8 @@ public class FeatureAdapter
 		JSONArray temp=jio.getJSONArray("procedures");
 		for(int i=0;i<temp.length();i++){
 			JSONObject jo_temp=temp.getJSONObject(i);
-			pcd_temp=new Procedure(jo_temp.getString("color"));
+			pcd_temp=new Procedure();
+			pcd_temp.setColor(jo_temp.getString("color"));
 			pcd_temp.setName(jo_temp.getString("name"));
 			pcd_temp.setSize(jo_temp.getString("size"));
 			//add

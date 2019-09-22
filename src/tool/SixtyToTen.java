@@ -42,22 +42,22 @@ public class SixtyToTen
 				case 10:
 					result.append("a");
 					break;
-					case 11:
+				case 11:
 					result.append("b");
 					break;
-					case 12:
+				case 12:
 					result.append("c");
 					break;
-					case 13:
+				case 13:
 					result.append("d");
 					break;
-					case 14:
+				case 14:
 					result.append("e");
 					break;
-					case 15:
+				case 15:
 					result.append("f");
 					break;
-					default:
+				default:
 					result.append(hexvalue);
 					break;
 			}
