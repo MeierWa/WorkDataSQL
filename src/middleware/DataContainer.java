@@ -50,43 +50,73 @@ public class DataContainer implements DataSuperviseInterface
 	public WorkData add(String src_modle, String src_procedure,String src_procedure_color, String src_size)
 	{
 		// TODO: Implement this method
+		//尺码用下横线_隔开
 		WorkData data=find(src_modle);
 		ArrayList<Procedure> procedures=null;
+		Procedure pd=null;
 		if(data!=null){
 			procedures=data.getProcedures();
+			pd=find(src_modle,src_procedure,src_procedure_color);
 			if(procedures!=null){
-				procedures.add(new Procedure(src_procedure,src_procedure_color));
+				if(pd!=null){
+					pd.setSize(pd.getSize()+"_"+src_size);//添加成功(最长距离)
+				}else{
+					pd=new Procedure(src_procedure,src_procedure_color);
+					pd.setSize(src_size);
+				}
+				procedures.add(pd);
 			}else{
 				procedures=new ArrayList<Procedure>();
-				procedures.add(new Procedure(src_procedure,src_procedure_color));
+				pd=new Procedure(src_procedure,src_procedure_color);
+				pd.setSize(src_size);
+				procedures.add(pd);
 			}
 		}else{
 			data=new WorkData();
 			data.setModel(src_modle);
 			procedures=new ArrayList<Procedure>();
-			procedures.add(new Procedure(src_procedure,src_procedure_color));
+			pd=new Procedure(src_procedure,src_procedure_color);
+			pd.setSize(src_size);
+			procedures.add(pd);
 		}
 		data.setProcedures(procedures);
 		datas.add(data);
-		return null;
+		return data;
 	}
 
 	@Override
 	public WorkData delete(String src_modle)
 	{
 		// TODO: Implement this method
-		return null;
+		WorkData wd=null;
+		for(WorkData wdt:datas){
+			if(wdt.getModel().equals(src_modle)){
+				wd=wdt;
+				datas.remove(wdt);
+				break;
+			}
+		}
+		return wd;
 	}
 
 	@Override
-	public WorkData delete(String src_modle, String src_procedure)
+	public Procedure delete(String src_modle, String src_procedure,String src_color)
 	{
 		// TODO: Implement this method
-		return null;
+		WorkData wd=find(src_modle);
+		if(wd==null){
+			return null;
+		}
+		Procedure pd=find(src_modle,src_procedure,src_color);
+		if(pd!=null){
+			wd.getProcedures().remove(pd);//删除
+		}
+		
+		return pd;
 	}
 
 	@Override
-	public WorkData delete(String src_modle, String src_procedure, String src_size)
+	public Procedure delete(String src_modle, String src_procedure,String src_color, String src_size)
 	{
 		// TODO: Implement this method
 		return null;
@@ -106,6 +136,26 @@ public class DataContainer implements DataSuperviseInterface
 		return data;
 	}
 
+	@Override
+	public Procedure find(String modle, String procedure,String color)
+	{
+		// TODO: Implement this method
+		WorkData wd=find(modle);
+		Procedure pd=null;
+		if(wd!=null){
+			 for(Procedure p:wd.getProcedures()){
+				 if(p.getName().equals(procedure)&&p.getColor().equals(color)){
+					 pd=p;
+					 break;
+				 }
+			 }
+			
+			return pd;
+		}else{
+			return null;
+		}
+	}
+	
 	@Override
 	public WorkData replace_model(String oldModel, String newModel)
 	{
