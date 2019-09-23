@@ -2,6 +2,7 @@ package middleware;
 import m_interface.*;
 import modle.*;
 import java.util.*;
+import java.util.regex.*;
 
 /**DataContainer 数据仓库
 *系统在线时数据的容器
@@ -119,7 +120,36 @@ public class DataContainer implements DataSuperviseInterface
 	public Procedure delete(String src_modle, String src_procedure,String src_color, String src_size)
 	{
 		// TODO: Implement this method
-		return null;
+		WorkData wd=find(src_modle);
+		Pattern pattern=null;
+		Matcher matcher=null;
+		StringBuilder rex=new StringBuilder();
+		if(wd==null){
+			return null;
+		}
+		Procedure pd=find(src_modle,src_procedure,src_color);
+		if(pd!=null){
+			//匹配size "[1-9][0-9]*([.][5])?[a-zA-Z]?"
+			String sc=pd.getColor();
+			if(sc.contains(src_color)){
+				//生成rex
+				for(int i=0;i<src_color.length();i++){
+					rex.append("[");
+					rex.append(src_color.charAt(i));
+					rex.append("]");
+				}
+				rex.append("[a-zA-Z]?");
+				//找一个group
+				pattern=Pattern.compile(rex.toString());
+				matcher=pattern.matcher(sc);
+				//替换原字符
+				if(matcher.find()){
+					sc.replace(matcher.group(),"");
+				}
+			}
+		}
+
+		return pd;
 	}
 
 	@Override

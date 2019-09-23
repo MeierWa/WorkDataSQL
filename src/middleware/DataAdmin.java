@@ -1,5 +1,6 @@
 package middleware;
 import m_interface.*;
+import java.util.*;
 
 /**
 *仓库管理员
@@ -8,8 +9,10 @@ import m_interface.*;
 public class DataAdmin implements CommandExecutor
 {
 
+	private ArrayList<Command> commandQueue=null;//命令队列
+	
 	@Override
-	public void addSize(String s)
+	public void adSize(String s)
 	{
 		// TODO: Implement this method
 	}
@@ -30,6 +33,11 @@ public class DataAdmin implements CommandExecutor
 	public void addDescription(String des)
 	{
 		// TODO: Implement this method
+	}
+	
+	
+	public DataAdmin(){
+		commandQueue=new ArrayList<Command>();
 	}
 	
 }
