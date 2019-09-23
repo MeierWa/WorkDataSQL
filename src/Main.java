@@ -8,7 +8,7 @@ import adapter.*;
 
 public class Main
 {
-	//nima
+	//nim
 	public static void main(String[] args)
 	{
 	
