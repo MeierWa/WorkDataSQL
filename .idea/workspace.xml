@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7aa4d03b-aa59-4b22-a012-8e2e6c5b51f5" name="Default Changelist" comment="" />
+    <list default="true" id="7aa4d03b-aa59-4b22-a012-8e2e6c5b51f5" name="Default Changelist" comment="add command interface">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MindPrint.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/MindPrint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/adapter/FeatureAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/adapter/FeatureAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/io/MindFileControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/io/MindFileControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/middleware/DataContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/middleware/DataContainer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/modle/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/modle/Procedure.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/modle/Procedure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/modle/WorkData.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/modle/WorkData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/thread/ReadDataThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/thread/ReadDataThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/thread/WriteDataThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/thread/WriteDataThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MindPrint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MindPrint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/MindFileControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/MindFileControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/DataAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/DataAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/ReadDataThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/ReadDataThread.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +50,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,7 +79,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -108,7 +125,8 @@
       <workItem from="1568524551240" duration="4599000" />
       <workItem from="1568719433953" duration="1899000" />
       <workItem from="1568727893364" duration="188000" />
-      <workItem from="1568990136479" duration="1172000" />
+      <workItem from="1568990136479" duration="1296000" />
+      <workItem from="1569234655014" duration="1881000" />
     </task>
     <task id="LOCAL-00001" summary="i">
       <created>1568727993926</created>
@@ -124,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568991210328</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add command interface">
+      <created>1568991341238</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568991341238</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

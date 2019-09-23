@@ -1,11 +1,13 @@
 
 import java.util.*;
-import modle.*;public class MindPrint
+import modle.*;
+
+public class MindPrint
 {
 	
-	private List works=null;
+	private List<WorkData> works=null;
 	
-	public MindPrint(List works){
+	public MindPrint(List<WorkData> works){
 		this.works=works;
 	}
 	
@@ -14,7 +16,7 @@ import modle.*;public class MindPrint
 		System.out.println("单子数量："+works.size());
 		for(WorkData wd:works){
 			System.out.println(wd.getModel()+"_"+wd.getDescription());
-			List ll=wd.getProcedures();
+			List<Procedure> ll=wd.getProcedures();
 			for(Procedure p:ll){
 				System.out.println("___颜色:"+p.getColor()+"_工序:"+p.getName()+"_尺码:"+p.getSize());
 			}

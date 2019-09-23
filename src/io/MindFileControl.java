@@ -16,17 +16,16 @@ public class MindFileControl
 	public final static int READ_NOEXIST=-1,READ_NOMATCH=1,READ_SUCCESS=2;
 	public final static int WRITE_ERROR=-1,WRITE_NOMACTH=1,WRITE_SUCCESS=2;
 	
-	public static String path="";//不存在-1，不匹配1,成功2
+	private String path="";//不存在-1，不匹配1,成功2
 	
 	
 	
 	/**文件读取
 	*
 	*/
-	public int readFile ( String path, String fileName, DataHelper helper,ArrayList<JSONObject> al) throws JSONException, FileNotFoundException, IOException{
-		this.path=path+"/"+fileName;
-		File f = new File(path+"/"+fileName);
-		File bat_f = new File(path+"/"+fileName.copyValueOf(fileName.toCharArray(),0,fileName.lastIndexOf("."))+".bat");
+	public int readFile (DataHelper helper,ArrayList<JSONObject> al) throws JSONException, FileNotFoundException, IOException{
+		File f = new File(path);
+		File bat_f = new File(String.copyValueOf(path.toCharArray(),0,path.lastIndexOf("."))+".bat");
 		if(!f.exists()){
 			if(bat_f.exists()){
 				f=bat_f;
@@ -76,7 +75,7 @@ public class MindFileControl
 	**文件写入
 	*/
 	public int write(ArrayList<WorkData> src_wds) throws Exception{
-		String str_bat_file=path.copyValueOf(path.toCharArray(),0,path.lastIndexOf("."));
+		String str_bat_file=String.copyValueOf(path.toCharArray(),0,path.lastIndexOf("."));
 		//创建bat文件
 		File f = new File(path);
 		File f_out = new File(str_bat_file+".bat");
@@ -144,6 +143,10 @@ public class MindFileControl
 		//验证文件
 		return WRITE_SUCCESS;
 	}
-	
+
+
+	public MindFileControl(String path){
+		this.path=path;
+	}
 	
 }

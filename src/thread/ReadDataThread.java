@@ -35,7 +35,7 @@ public class ReadDataThread implements Runnable
 		}
 		try
 		{
-			mfc.readFile("/storage/emulated/0/OT", "sss.txt", dh, jsArray);
+			mfc.readFile( dh, jsArray);
 			JSONObject jo=(JSONObject)jsArray.get(0);
 			//使用适配器转换
 			for(JSONObject jio:jsArray){

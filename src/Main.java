@@ -14,7 +14,14 @@ public class Main
 	
 		Scanner input = new Scanner(System.in);
 		System.out.println(">>>>文件验证...");
-		MindFileControl mfc = new MindFileControl();
+		MindFileControl mfc = null;
+		File f1=new File(CP.pathName_pc+"\\"+ CP.fileName);
+		File f2=new File(CP.pathName_phone+"/"+ CP.fileName);
+		if(f1.exists()){
+			mfc=new MindFileControl(f1.getAbsolutePath());
+		}else {
+			mfc=new MindFileControl(f2.getAbsolutePath());
+		}
 		DataHelper dh=new DataHelper();
 		ArrayList<WorkData> workDatas=new ArrayList<WorkData>();
 		FeatureAdapter adp=new FeatureAdapter();
