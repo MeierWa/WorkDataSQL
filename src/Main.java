@@ -9,10 +9,12 @@ import adapter.*;
 
 public class Main
 {
+	//nima
 	public static void main(String[] args)
 	{
 	
 		Scanner input = new Scanner(System.in);
+
 		System.out.println(">>>>文件验证...");
 		MindFileControl mfc = null;
 		File f1=new File(CP.pathName_pc+"\\"+ CP.fileName);
