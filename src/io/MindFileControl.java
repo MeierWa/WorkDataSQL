@@ -70,10 +70,13 @@ public class MindFileControl
 		
 		return READ_SUCCESS;
 	}
-	
-	/*
-	**文件写入
-	*/
+
+		/** @author Administrator
+		* @Description
+		* @Date 19:22 2019/9/24
+		* @Param [src_wds]
+		* @Return int
+		**/
 	public int write(ArrayList<WorkData> src_wds) throws Exception{
 		String str_bat_file=String.copyValueOf(path.toCharArray(),0,path.lastIndexOf("."));
 		//创建bat文件
