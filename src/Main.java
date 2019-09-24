@@ -1,4 +1,7 @@
+import java.awt.*;
 import java.util.*;
+
+import command.AddModelCommand;
 import io.*;
 import java.io.*;
 import middleware.*;
@@ -25,6 +28,8 @@ public class Main
 		DataHelper dh=new DataHelper();
 		ArrayList<WorkData> workDatas=new ArrayList<WorkData>();
 		FeatureAdapter adp=new FeatureAdapter();
+		DataContainer dc=new DataContainer(workDatas);
+
 		//读取数据
 		new Thread(new ReadDataThread(mfc,workDatas,dh,adp)).start();
 		
@@ -51,7 +56,12 @@ public class Main
 		if(ac==1){
 			System.out.println("正在保存");
 			new Thread(new WriteDataThread(mfc,workDatas)).start();
+		}else if(ac==2){
+			System.out.println("execute");
+			new AddModelCommand("Cu924",dc).undo();
+
 		}
+
 		
 		}
 	}

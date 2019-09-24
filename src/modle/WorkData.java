@@ -45,14 +45,16 @@ public class WorkData
 		StringBuilder sb=new StringBuilder();
 		sb.append("{");
 		sb.append("\"model\":\""+model+"\"");
-		sb.append(",\"procedures\""+":");
-		//工序
-		sb.append("[");
-		for(Procedure p:procedures){
-			sb.append(p.toString()+",");
+		if(procedures!=null&&!procedures.isEmpty()){
+			sb.append(",\"procedures\""+":");
+			//工序
+			sb.append("[");
+			for(Procedure p:procedures){
+				sb.append(p.toString()+",");
+			}
+			sb.deleteCharAt(sb.length()-1);//结尾多了一个逗号
+			sb.append("]");
 		}
-		sb.deleteCharAt(sb.length()-1);//结尾多了一个逗号
-		sb.append("]");
 		sb.append(",\"description\":\""+description+"\"");
 		sb.append("}");
 		return sb.toString();

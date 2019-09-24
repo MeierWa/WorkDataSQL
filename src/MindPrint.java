@@ -17,6 +17,9 @@ public class MindPrint
 		for(WorkData wd:works){
 			System.out.println(wd.getModel()+"_"+wd.getDescription());
 			List<Procedure> ll=wd.getProcedures();
+			if(ll==null){
+				return;
+			}
 			for(Procedure p:ll){
 				System.out.println("___颜色:"+p.getColor()+"_工序:"+p.getName()+"_尺码:"+p.getSize());
 			}

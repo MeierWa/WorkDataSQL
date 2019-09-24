@@ -4,28 +4,14 @@
     <list default="true" id="7aa4d03b-aa59-4b22-a012-8e2e6c5b51f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/MindPrint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/adapter/CP.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/adapter/FeatureAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/io/MindFileControl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/m_interface/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/m_interface/CommandExecutor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/m_interface/DataSuperviseInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/middleware/DataAdmin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/middleware/DataContainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/middleware/DataHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/modle/CommandInvoke.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/modle/Procedure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/modle/WorkData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/thread/ReadDataThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/thread/WriteDataThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/tool/FileHeadCreater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/tool/SixtyToTen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MindPrint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MindPrint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adapter/FeatureAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/adapter/FeatureAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/MindFileControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/MindFileControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/m_interface/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/m_interface/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/m_interface/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/m_interface/InterReactive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware/DataAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/DataAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手机电脑自动匹配文件.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modle/CommandInvoke.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modle/WorkData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modle/WorkData.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +135,7 @@
       <workItem from="1568990136479" duration="1296000" />
       <workItem from="1569234655014" duration="5606000" />
       <workItem from="1569320307968" duration="937000" />
-      <workItem from="1569321301418" duration="2851000" />
+      <workItem from="1569321301418" duration="8749000" />
     </task>
     <task id="LOCAL-00001" summary="i">
       <created>1568727993926</created>
@@ -207,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569239498004</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="9/24">
+      <created>1569324198920</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1569324198920</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +224,7 @@
     <MESSAGE value="i" />
     <MESSAGE value="add command interface" />
     <MESSAGE value="手机电脑自动匹配文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="手机电脑自动匹配文件" />
+    <MESSAGE value="9/24" />
+    <option name="LAST_COMMIT_MESSAGE" value="9/24" />
   </component>
 </project>

@@ -136,6 +136,7 @@ public class MindFileControl
 				ss.reverse();
 				osw.write(ss.toString());
 				osw.write(wd.toString());
+				ss.delete(0,ss.length());
 			}
 			//关闭
 			osw.flush();

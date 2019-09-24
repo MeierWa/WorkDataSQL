@@ -24,17 +24,21 @@ public class FeatureAdapter
 		result.setModel(jio.getString("model"));
 		ArrayList<Procedure> pcds=new ArrayList<Procedure>();
 		Procedure pcd_temp=null;
-		JSONArray temp=jio.getJSONArray("procedures");
-		for(int i=0;i<temp.length();i++){
-			JSONObject jo_temp=temp.getJSONObject(i);
-			pcd_temp=new Procedure();
-			pcd_temp.setColor(jo_temp.getString("color"));
-			pcd_temp.setName(jo_temp.getString("name"));
-			pcd_temp.setSize(jo_temp.getString("size"));
-			//add
-			pcds.add(pcd_temp);
+		try {
+			JSONArray temp = jio.getJSONArray("procedures");
+			for (int i = 0; i < temp.length(); i++) {
+				JSONObject jo_temp = temp.getJSONObject(i);
+				pcd_temp = new Procedure();
+				pcd_temp.setColor(jo_temp.getString("color"));
+				pcd_temp.setName(jo_temp.getString("name"));
+				pcd_temp.setSize(jo_temp.getString("size"));
+				//add
+				pcds.add(pcd_temp);
+			}
+			result.setProcedures(pcds);
+		}catch (JSONException je){
+			//allow no procedures
 		}
-		result.setProcedures(pcds);
 		result.setDescription(jio.getString("description"));
 		
 		return result;

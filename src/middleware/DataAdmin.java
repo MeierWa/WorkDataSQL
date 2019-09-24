@@ -3,13 +3,16 @@ import m_interface.*;
 import java.util.*;
 
 /**
-*仓库管理员
-*/
+ * @author  mewCu
+ * @description
+ * @date  2019/9/24 19:52
+ * @modified 
+ */
 
-public class DataAdmin implements CommandExecutor
+public class DataAdmin implements InterReactive
 {
 
-	private ArrayList<Command> commandQueue=null;//命令队列
+	private ArrayList<Command> commandQueue=null;
 
 	@Override
 	public void addSize(String s)
