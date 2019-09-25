@@ -17,7 +17,8 @@ import modle.WorkData;
  */
 public class DeleteModelCommand extends MindCommand{
 
-    private WorkData wd_save=null;
+    private String model="";
+    private WorkData wdSave =null;
 
     @Override
     public String toString() {
@@ -25,7 +26,7 @@ public class DeleteModelCommand extends MindCommand{
     }
 
     private void save() {
-        wd_save=getDc().find(getModel());
+        wdSave=getDc().find(getModel());
     }
 
     @Override
@@ -37,11 +38,18 @@ public class DeleteModelCommand extends MindCommand{
     @Override
     public void undo() {
         //Throw a Exception
-        getDc().add(wd_save);
+        getDc().add(wdSave);
     }
 
     public DeleteModelCommand(String model, DataContainer dc) {
-        super(model, dc);
+        super(dc);
     }
 
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
 }

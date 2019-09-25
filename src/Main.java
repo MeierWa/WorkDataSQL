@@ -2,6 +2,8 @@ import java.awt.*;
 import java.util.*;
 
 import command.AddModelCommand;
+import command.AddProcedureCommand;
+import command.DeleteProcedureCommand;
 import io.*;
 import java.io.*;
 import middleware.*;
@@ -60,13 +62,12 @@ public class Main
 			new Thread(new WriteDataThread(mfc,workDatas)).start();
 		}else if(ac==2){
 			System.out.println("add");
-			new AddModelCommand("Cu924",dc).execute();
+			new AddProcedureCommand("Cu925","上里布","黑色",dc).execute();
 		}else if(ac==3){
 			System.out.println("delete");
-			new AddModelCommand("Cu924",dc).undo();
+			new DeleteProcedureCommand("Cu925","上里布","黑色",dc).execute();
 		}
 
-		
 		}
 	}
 }

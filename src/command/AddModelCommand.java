@@ -16,6 +16,7 @@ import middleware.DataContainer;
  */
 public class AddModelCommand extends MindCommand {
 
+    private String model="";
 
     @Override
     public String toString() {
@@ -34,7 +35,15 @@ public class AddModelCommand extends MindCommand {
     }
 
     public AddModelCommand(String model, DataContainer dc) {
-        super(model, dc);
+        super(dc);
+        this.model=model;
     }
 
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
 }

@@ -7,6 +7,7 @@ package command;/**
 
 import m_interface.Command;
 import middleware.DataContainer;
+import modle.WorkData;
 
 /**
  *@ClassName MindCommand
@@ -17,19 +18,9 @@ import middleware.DataContainer;
 public abstract class MindCommand implements Command {
 
     private DataContainer dc=null;
-    private String model="";
 
-    public MindCommand(String model, DataContainer dc){
+    public MindCommand(DataContainer dc){
         this.dc=dc;
-        this.model=model;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public DataContainer getDc() {
@@ -39,4 +30,6 @@ public abstract class MindCommand implements Command {
     public void setDc(DataContainer dc) {
         this.dc = dc;
     }
+
+
 }

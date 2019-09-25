@@ -122,11 +122,18 @@ public class DataContainer implements DataSuperviseInterface
 		WorkData wd=find(src_modle);
 		if(wd==null){
 			return null;
+		}else {
+			System.out.println("no null");
 		}
 		Procedure pd=find(src_modle,src_procedure,src_color);
 		if(pd!=null){
 			wd.getProcedures().remove(pd);//删除
+			System.out.println("yes");
+			System.out.println(wd.getProcedures().size());
+		}else {
+			System.out.println("pd  null");
 		}
+
 		
 		return pd;
 	}
@@ -187,7 +194,7 @@ public class DataContainer implements DataSuperviseInterface
 		// TODO: Implement this method
 		WorkData wd=find(modle);
 		Procedure pd=null;
-		if(wd!=null){
+		if(wd!=null&&wd.getProcedures()!=null){
 			 for(Procedure p:wd.getProcedures()){
 				 if(p.getName().equals(procedure)&&p.getColor().equals(color)){
 					 pd=p;
