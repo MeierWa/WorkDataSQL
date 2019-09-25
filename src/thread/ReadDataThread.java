@@ -12,7 +12,7 @@ public class ReadDataThread implements Runnable
 
 	private MindFileControl mfc;
 	private ArrayList<JSONObject> jsArray;
-	private ArrayList datas;
+	private ArrayList<WorkData> datas;
 	private DataHelper dh;
 	private FeatureAdapter adp=null;
 	
@@ -36,16 +36,11 @@ public class ReadDataThread implements Runnable
 		try
 		{
 			mfc.readFile( dh, jsArray);
-			JSONObject jo=(JSONObject)jsArray.get(0);
 			//使用适配器转换
 			for(JSONObject jio:jsArray){
 				datas.add(adp.toWorkData(jio));
 			}
-		}
-		catch (JSONException e)
-		{
-			e.printStackTrace();
-		}catch(IOException e){
+		}catch(Exception e){
 			e.printStackTrace();
 		}
 

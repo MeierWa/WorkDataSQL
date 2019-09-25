@@ -51,15 +51,19 @@ public class Main
 		while(true){
 			
 		System.out.println("输入1保存");
+		System.out.println("输入2add");
+		System.out.println("输入3delete");
 		int ac=0;
 		ac=input.nextInt();
 		if(ac==1){
 			System.out.println("正在保存");
 			new Thread(new WriteDataThread(mfc,workDatas)).start();
 		}else if(ac==2){
-			System.out.println("execute");
+			System.out.println("add");
+			new AddModelCommand("Cu924",dc).execute();
+		}else if(ac==3){
+			System.out.println("delete");
 			new AddModelCommand("Cu924",dc).undo();
-
 		}
 
 		

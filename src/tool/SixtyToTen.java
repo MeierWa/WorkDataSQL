@@ -2,7 +2,7 @@ package tool;
 
 public class SixtyToTen
 {
-	public static int SixtyToTen(String src){
+	public static int sixtyToTen(String src){
 		char[] chars=src.toUpperCase().toCharArray();
 		int result=0;
 		for(int i=0;i<chars.length;i++){

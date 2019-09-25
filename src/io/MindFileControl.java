@@ -23,7 +23,7 @@ public class MindFileControl
 	/**文件读取
 	*
 	*/
-	public int readFile (DataHelper helper,ArrayList<JSONObject> al) throws JSONException, FileNotFoundException, IOException{
+	public int readFile (DataHelper helper,ArrayList<JSONObject> al){
 		File f = new File(path);
 		File bat_f = new File(String.copyValueOf(path.toCharArray(),0,path.lastIndexOf("."))+".bat");
 		if(!f.exists()){
@@ -37,36 +37,41 @@ public class MindFileControl
 		}
 		FileInputStream fis;
 		InputStreamReader isr;
-			fis=new FileInputStream(f);
-			isr=new InputStreamReader(fis,"UTF-8");
-			//格式是否匹配
-			int len=0;
-			char[] fileHead=new char[8];
-			if ((len=isr.read(fileHead, 0, 8)) != -1)
-			{
-				if(fileHead[0]=='C'&&fileHead[1]=='u'){
-					helper.setData(fileHead);
-				}else{
-					return READ_NOMATCH;
-				}
-			}
-			//读取单元数据(读取单元大小，读取json)
-			for(int i=0;i<helper.getElementNum();i++){
-				
-				char[] bs=new char[4];
-				if((len=isr.read(bs,0,4))!=-1){
-					int size=SixtyToTen.SixtyToTen(String.valueOf(bs));
-					//读json
-					char[] data=new char[size];
-					isr.read(data,0,size);
-					String js=String.valueOf(data);
-					al.add(new JSONObject(js));
-				}
-			}
-			
-			
-			fis.close();
-		
+		try {
+
+            fis=new FileInputStream(f);
+            isr=new InputStreamReader(fis,"UTF-8");
+            //格式是否匹配
+            int len=0;
+            char[] fileHead=new char[8];
+            if ((len=isr.read(fileHead, 0, 8)) != -1)
+            {
+                if(fileHead[0]=='C'&&fileHead[1]=='u'){
+                    helper.setData(fileHead);
+                }else{
+                    return READ_NOMATCH;
+                }
+            }
+            //读取单元数据(读取单元大小，读取json)
+            for(int i=0;i<helper.getElementNum();i++){
+
+                char[] bs=new char[4];
+                if((len=isr.read(bs,0,4))!=-1){
+                    int size=SixtyToTen.sixtyToTen(String.valueOf(bs));
+                    //读json
+                    char[] data=new char[size];
+                    isr.read(data,0,size);
+                    String js=String.valueOf(data);
+                    al.add(new JSONObject(js));
+                }
+            }
+
+
+            fis.close();
+        }catch (Exception e){
+		    e.printStackTrace();
+        }
+
 		
 		return READ_SUCCESS;
 	}

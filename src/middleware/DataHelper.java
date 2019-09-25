@@ -9,13 +9,16 @@ import tool.*;
 
 public class DataHelper
 {
-	
-	private char[] fileHead;//文件头
-	private char[] identifier;//标识符
-	private int version;//版本号
-	private int elementNum;//单元数量
-	private int type;//文件类型
-	
+
+    // 标识符
+	private char[] identifier;
+    //版本号
+	private int version;
+    //单元数量
+	private int elementNum;
+    //单元类型
+    private char type;
+
 	public DataHelper(){
 		identifier=new char[2];
 	}
@@ -37,7 +40,7 @@ public class DataHelper
 		identifier[0]= data[0];
 		identifier[1]= data[1];
 		version=data[2];
-		elementNum=SixtyToTen.SixtyToTen(String.valueOf(new char[]{data[3],data[4]}));
+		elementNum=SixtyToTen.sixtyToTen(String.valueOf(new char[]{data[3],data[4]}));
 		type=data[5];
 	}
 
