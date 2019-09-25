@@ -133,7 +133,7 @@ public class MindFileControl
 			
 			StringBuilder ss=new StringBuilder();
 			for(WorkData wd:src_wds){
-				ss.append(SixtyToTen.TenToSixty(134));
+				ss.append(SixtyToTen.TenToSixty(wd.toString().length()));
 				int n=4-ss.length();
 				for(int i=0;i<n;i++){
 					ss.append("0");
