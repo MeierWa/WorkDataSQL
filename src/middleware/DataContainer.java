@@ -85,7 +85,22 @@ public class DataContainer implements DataSuperviseInterface
 		return data;
 	}
 
-	@Override
+        /** @author mewCu
+        * @Description
+        * @Date 19:15 2019/9/25
+        * @Param [dst_wd]
+        * @Return modle.WorkData
+        **/
+
+    @Override
+    public WorkData add(WorkData dst_wd) {
+        WorkData wd=null;
+        datas.add(dst_wd);
+
+        return datas.get(datas.size()-1);
+    }
+
+    @Override
 	public WorkData delete(String src_modle)
 	{
 		// TODO: Implement this method

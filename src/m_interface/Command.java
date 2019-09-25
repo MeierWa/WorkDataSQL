@@ -4,7 +4,12 @@ package m_interface;
 */
 public interface Command
 {
-
-	void execute();//执行
-	void undo();//撤销
+	/**
+	 * 执行
+	 */
+	 void execute();
+	 /**
+	 * 撤销
+	 */
+	void undo();
 }

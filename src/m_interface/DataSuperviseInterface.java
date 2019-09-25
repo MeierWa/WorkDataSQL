@@ -10,6 +10,7 @@ public interface DataSuperviseInterface
 	WorkData add(String src_modle);//增
 	WorkData add(String src_modle,String src_procedure,String src_procedure_color);
 	WorkData add(String src_modle,String src_procedure,String src_procedure_color,String src_size);
+	WorkData add(WorkData dst_wd);
 	
 	WorkData delete(String src_modle);//删
 	Procedure delete(String src_modle,String src_procedure,String src_procedure_color);
