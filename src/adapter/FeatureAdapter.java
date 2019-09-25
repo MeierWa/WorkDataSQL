@@ -24,7 +24,7 @@ public class FeatureAdapter
 		result.setModel(jio.getString("model"));
 		ArrayList<Procedure> pcds=new ArrayList<Procedure>();
 		Procedure pcd_temp=null;
-		try {
+		if(!jio.isNull("procedures")){
 			JSONArray temp = jio.getJSONArray("procedures");
 			for (int i = 0; i < temp.length(); i++) {
 				JSONObject jo_temp = temp.getJSONObject(i);
@@ -36,8 +36,6 @@ public class FeatureAdapter
 				pcds.add(pcd_temp);
 			}
 			result.setProcedures(pcds);
-		}catch (JSONException je){
-			//allow no procedures
 		}
 		result.setDescription(jio.getString("description"));
 		
