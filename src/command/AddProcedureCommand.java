@@ -27,16 +27,12 @@ public class AddProcedureCommand extends MindCommand {
 
     @Override
     public void execute() {
-        if(getDc().find(getModel(),getProcedure(),getColor())==null) {
-            getDc().add(getModel(), getProcedure(), getColor());
-        }
+        getDc().add(getModel(), getProcedure(), getColor());
     }
 
     @Override
     public void undo() {
-        if (getDc().find(getModel(), getProcedure(), getColor()) == null){
-            getDc().delete(getModel(), getProcedure(), getColor());
-        }
+        getDc().delete(getModel(), getProcedure(), getColor());
     }
 
     public AddProcedureCommand(String model,String procedure,String color,DataContainer dc) {

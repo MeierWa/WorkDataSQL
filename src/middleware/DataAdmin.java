@@ -6,8 +6,8 @@ import command.*;
 
 /**
  * @author  mewCu
- * @description
- * @date  2019/9/24 19:52
+ * @description 让用户操作与数据交互相契
+ * @date  2019/9/26	21:00
  * @modified 
  */
 
@@ -17,16 +17,6 @@ public class DataAdmin implements InterReactive
 	private ArrayList<Command> commandQueue=null;
 	private WorkData selectAction=null;
 	private DataContainer dc=null;
-
-	public void setDataContainer(DataContainer dc)
-	{
-		this.dc = dc;
-	}
-
-	public DataContainer getDataContainer()
-	{
-		return dc;
-	}
 
 	public void setSelectAction(WorkData selectAction)
 	{
@@ -42,6 +32,7 @@ public class DataAdmin implements InterReactive
 	public void addSize(String s)
 	{
 		// TODO: Implement this method
+
 	}
 
     @Override
@@ -49,20 +40,18 @@ public class DataAdmin implements InterReactive
     {
         // TODO: Implement this method
 		WorkData wd=getSelectAction();
-		if(wd!=null){
-			Command c=new AddProcedureCommand(wd.getModel(),sp,sc,getDataContainer());
-			c.execute();
-			commandQueue.add(c);
-		}
-    }
+		Command c=new AddProcedureCommand(wd.getModel(),sp,sc,dc);
+		c.execute();
+		commandQueue.add(c);
+}
 
 	@Override
 	public void addModel(String model)
 	{
 		// TODO: Implement this method
-		Command c=new AddModelCommand(model,getDataContainer());
+		Command c=new AddModelCommand(model,dc);
 		c.execute();
-		setSelectAction(getDataContainer().find(model));
+		setSelectAction(dc.find(model));
 		commandQueue.add(c);
 	}
 
@@ -71,17 +60,10 @@ public class DataAdmin implements InterReactive
 	{
 		// TODO: Implement this method
 	}
-	
-	
+
 	public DataAdmin(DataContainer dc){
 		commandQueue=new ArrayList<Command>();
 		this.dc=dc;
-		initData();
-	}
-	
-	
-	private void initData(){
-		
 	}
 	
 }

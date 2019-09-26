@@ -6,7 +6,7 @@ import modle.*;
 */
 public interface DataSuperviseInterface
 {
-	
+
 	WorkData add(String src_modle);//增
 	Procedure add(String src_modle,String src_procedure,String src_procedure_color);
 	Procedure add(String src_modle,String src_procedure,String src_procedure_color,String src_size);
@@ -17,7 +17,7 @@ public interface DataSuperviseInterface
 	WorkData delete(String src_modle);//删
 	Procedure delete(String src_modle,String src_procedure,String src_procedure_color);
 	Procedure delete(String src_modle,String src_procedure,String src_color,String src_size);
-	
+
 	WorkData find(String modle);//查
 	Procedure find(String modle,String procedure,String color); 
 	

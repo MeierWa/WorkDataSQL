@@ -12,6 +12,9 @@ import java.util.regex.*;
 public class DataContainer implements DataSuperviseInterface
 {
 
+	private static final boolean allowRepeatModel=false;
+	private static final boolean allowRepeatProcedureAndColor=false;
+
 	@Override
 	public WorkData add(String src_modle)
 	{
@@ -28,10 +31,19 @@ public class DataContainer implements DataSuperviseInterface
 		// TODO: Implement this method
 		WorkData data=find(src_modle);
 		ArrayList<Procedure> procedures=null;
+		boolean addRepeat=false;
 		if(data!=null){
 			procedures=data.getProcedures();
 			if(procedures!=null){
-				procedures.add(new Procedure(src_procedure,src_procedure_color));
+				for(Procedure pd:procedures){
+					if(pd.getName().equals(src_procedure)&&pd.getColor().equals(src_procedure_color)){
+						addRepeat=true;
+						break;
+					}
+				}
+				if(!(addRepeat&&!allowRepeatProcedureAndColor)){
+					procedures.add(new Procedure(src_procedure,src_procedure_color));
+				}
 			}else{
 				procedures=new ArrayList<Procedure>();
 				procedures.add(new Procedure(src_procedure,src_procedure_color));
