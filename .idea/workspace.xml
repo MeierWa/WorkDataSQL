@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aa4d03b-aa59-4b22-a012-8e2e6c5b51f5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/java.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/adapter/FeatureAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/adapter/FeatureAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/command/AddModelCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/command/AddModelCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/command/DeleteModelCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/command/DeleteModelCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/command/MindCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/command/MindCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/io/MindFileControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/io/MindFileControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/middleware/DataContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/middleware/DataContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/AddModelCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/AddModelCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/DeleteModelCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/DeleteModelCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/MindCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/MindCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/m_interface/DataSuperviseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/m_interface/DataSuperviseInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware/DataContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/DataContainer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -140,7 +129,8 @@
       <workItem from="1569234655014" duration="5606000" />
       <workItem from="1569320307968" duration="937000" />
       <workItem from="1569321301418" duration="8789000" />
-      <workItem from="1569409430164" duration="8738000" />
+      <workItem from="1569409430164" duration="8953000" />
+      <workItem from="1569462431489" duration="2454000" />
     </task>
     <task id="LOCAL-00001" summary="i">
       <created>1568727993926</created>
@@ -226,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569413197880</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="2019年9月25日 19:18:30">
+      <created>1569420061491</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1569420061491</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,21 +250,5 @@
     <MESSAGE value="9/24" />
     <MESSAGE value="2019年9月25日 19:18:30" />
     <option name="LAST_COMMIT_MESSAGE" value="2019年9月25日 19:18:30" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/middleware/DataContainer.java</url>
-          <line>122</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/middleware/DataContainer.java</url>
-          <line>194</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

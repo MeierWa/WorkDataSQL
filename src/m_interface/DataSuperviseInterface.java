@@ -8,8 +8,8 @@ public interface DataSuperviseInterface
 {
 	
 	WorkData add(String src_modle);//增
-	WorkData add(String src_modle,String src_procedure,String src_procedure_color);
-	WorkData add(String src_modle,String src_procedure,String src_procedure_color,String src_size);
+	Procedure add(String src_modle,String src_procedure,String src_procedure_color);
+	Procedure add(String src_modle,String src_procedure,String src_procedure_color,String src_size);
 	WorkData add(WorkData dst_wd);
 	
 	WorkData delete(String src_modle);//删
@@ -20,7 +20,8 @@ public interface DataSuperviseInterface
 	Procedure find(String modle,String procedure,String color); 
 	
 	WorkData replace_model(String oldModel,String newModel);//改
-	WorkData replace_procedure(String model,String oldProcedure,String newProcedure);
+	Procedure replace_procedure(String model,String oldProcedure,String newProcedure,String oldColor,String newColor);
+	Procedure replace_szie(String model,String procedure,String color,String oldSize,String newSize);
 	
 	
 }

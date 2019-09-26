@@ -23,7 +23,7 @@ public class DataContainer implements DataSuperviseInterface
 	}
 
 	@Override
-	public WorkData add(String src_modle, String src_procedure,String src_procedure_color)
+	public Procedure add(String src_modle, String src_procedure,String src_procedure_color)
 	{
 		// TODO: Implement this method
 		WorkData data=find(src_modle);
@@ -44,11 +44,11 @@ public class DataContainer implements DataSuperviseInterface
 		}
 		data.setProcedures(procedures);
 		datas.add(data);
-		return data;
+		return find(src_modle,src_procedure,src_procedure_color);
 	}
 
 	@Override
-	public WorkData add(String src_modle, String src_procedure,String src_procedure_color, String src_size)
+	public Procedure add(String src_modle, String src_procedure,String src_procedure_color, String src_size)
 	{
 		// TODO: Implement this method
 		//尺码用下横线_隔开
@@ -82,7 +82,7 @@ public class DataContainer implements DataSuperviseInterface
 		}
 		data.setProcedures(procedures);
 		datas.add(data);
-		return data;
+		return find(src_modle,src_procedure,src_procedure_color);
 	}
 
         /** @author mewCu
@@ -122,18 +122,11 @@ public class DataContainer implements DataSuperviseInterface
 		WorkData wd=find(src_modle);
 		if(wd==null){
 			return null;
-		}else {
-			System.out.println("no null");
 		}
 		Procedure pd=find(src_modle,src_procedure,src_color);
 		if(pd!=null){
 			wd.getProcedures().remove(pd);//删除
-			System.out.println("yes");
-			System.out.println(wd.getProcedures().size());
-		}else {
-			System.out.println("pd  null");
 		}
-
 		
 		return pd;
 	}
@@ -198,32 +191,66 @@ public class DataContainer implements DataSuperviseInterface
 			 for(Procedure p:wd.getProcedures()){
 				 if(p.getName().equals(procedure)&&p.getColor().equals(color)){
 					 pd=p;
-					 break;
+					 return pd;
 				 }
 			 }
-			
-			return pd;
-		}else{
-			return null;
 		}
+		return null;
 	}
 	
 	@Override
 	public WorkData replace_model(String oldModel, String newModel)
 	{
 		// TODO: Implement this method
-		return null;
+       WorkData wd=find(oldModel);
+       if(wd==null){
+           return  null;
+       }
+       wd.setModel(newModel);
+
+		return find(newModel);
 	}
 
-	@Override
-	public WorkData replace_procedure(String model, String oldProcedure, String newProcedure)
-	{
-		// TODO: Implement this method
-		return null;
-	}
-	
-	
-	private ArrayList<WorkData> datas=null;
+    @Override
+    public Procedure replace_procedure(String model, String oldProcedure, String newProcedure, String oldColor, String newColor) {
+        Procedure pd=find(model,oldProcedure,oldColor);
+        if(pd==null){
+            return null;
+        }
+        pd.setName(newProcedure);
+        pd.setColor(newColor);
+        return find(model,newProcedure,newColor);
+    }
+
+    @Override
+    public Procedure replace_szie(String model, String procedure, String color, String oldSize, String newSize) {
+        Procedure pd=find(model,procedure,color);
+        Pattern pattern2=null;
+        Matcher matcher2=null;
+        if(pd==null){
+            return null;
+        }
+        if(!pd.getSize().contains(oldSize)){
+            return null;
+        }else {
+            //确定该size的完整形式和具体位置
+            StringBuilder rex=new StringBuilder();
+            char[] chars=oldSize.toCharArray();
+            for(int i=0;i<chars.length;i++){
+                rex.append("["+chars[i]+"]");
+            }
+            rex.append("[a-zA-Z]?");
+            pattern2=Pattern.compile(rex.toString());;
+            matcher2=pattern2.matcher(pd.getSize());
+            if(matcher2.find()){
+                //替换
+                pd.getSize().replace(matcher2.group(),newSize);
+            }
+        }
+        return find(model,procedure,color);
+    }
+
+    private ArrayList<WorkData> datas=null;
 	
 
 	
