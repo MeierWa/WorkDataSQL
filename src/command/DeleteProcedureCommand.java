@@ -6,6 +6,7 @@ package command;/**
  */
 
 import middleware.DataContainer;
+import modle.*;
 
 /**
  *@ClassName DeleteProcedureCommand
@@ -18,6 +19,7 @@ public class DeleteProcedureCommand extends MindCommand {
     private String model="";
     private String procedure="";
     private String color="";
+	private Procedure saveProcedure=null;
 
     @Override
     public String toString() {
@@ -27,13 +29,17 @@ public class DeleteProcedureCommand extends MindCommand {
     @Override
     public void execute() {
         if(getDc().find(getModel(),getProcedure(),getColor())!=null) {
-            getDc().delete(getModel(), getProcedure(), getColor());
+            saveProcedure=getDc().delete(getModel(), getProcedure(), getColor());
+			
         }
     }
 
     @Override
     public void undo() {
-        new AddProcedureCommand(getModel(),getProcedure(),getColor(),getDc()).execute();
+		if(saveProcedure==null){
+			return;
+		}
+        getDc().add(getModel(),saveProcedure);
     }
 
     public DeleteProcedureCommand(String model,String procedure,String color,DataContainer dc) {

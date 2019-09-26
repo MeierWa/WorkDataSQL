@@ -11,6 +11,8 @@ public interface DataSuperviseInterface
 	Procedure add(String src_modle,String src_procedure,String src_procedure_color);
 	Procedure add(String src_modle,String src_procedure,String src_procedure_color,String src_size);
 	WorkData add(WorkData dst_wd);
+	Procedure add(String model,Procedure procedure);
+	WorkData add(String src_model,String description);
 	
 	WorkData delete(String src_modle);//删
 	Procedure delete(String src_modle,String src_procedure,String src_procedure_color);

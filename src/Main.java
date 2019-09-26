@@ -10,6 +10,7 @@ import middleware.*;
 import modle.*;
 import thread.*;
 import adapter.*;
+import command.*;
 
 public class Main
 {
@@ -65,7 +66,7 @@ public class Main
 			new AddProcedureCommand("Cu925","上里布","黑色",dc).execute();
 		}else if(ac==3){
 			System.out.println("delete");
-			new DeleteProcedureCommand("Cu925","上里布","黑色",dc).execute();
+			new DeleteModelCommand("Cu925",dc).execute();
 		}
 
 		}

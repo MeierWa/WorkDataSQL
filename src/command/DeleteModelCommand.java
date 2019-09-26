@@ -32,17 +32,23 @@ public class DeleteModelCommand extends MindCommand{
     @Override
     public void execute() {
         this.save();
-        getDc().delete(getModel());
+        if(getDc().delete(getModel())!=null){
+			setCanUndo(true);
+		}
     }
 
     @Override
     public void undo() {
         //Throw a Exception
+		if(!isCanUndo()){
+			return;
+		}
         getDc().add(wdSave);
     }
 
     public DeleteModelCommand(String model, DataContainer dc) {
         super(dc);
+		setModel(model);
     }
 
     public String getModel() {

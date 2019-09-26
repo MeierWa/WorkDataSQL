@@ -100,6 +100,33 @@ public class DataContainer implements DataSuperviseInterface
         return datas.get(datas.size()-1);
     }
 
+	@Override
+	public Procedure add(String model, Procedure procedure)
+	{
+		// TODO: Implement this method
+		if(procedure==null){
+			return null;
+		}
+		WorkData wd=find(model);
+		if(wd!=null){
+			wd.getProcedures().add(procedure);
+			return wd.getProcedures().get(wd.getProcedures().size()-1);
+		}
+		return null;
+	}
+
+	@Override
+	public WorkData add(String src_model, String description)
+	{
+		// TODO: Implement this method
+		WorkData wd=this.find(src_model);
+		if(wd!=null){
+			wd.setDescription(description);
+			return wd;
+		}
+		return null;
+	}
+
     @Override
 	public WorkData delete(String src_modle)
 	{
@@ -160,6 +187,8 @@ public class DataContainer implements DataSuperviseInterface
 				//替换原字符
 				if(matcher.find()){
 					sc.replace(matcher.group(),"");
+				}else{
+					return null;
 				}
 			}
 		}
@@ -249,7 +278,7 @@ public class DataContainer implements DataSuperviseInterface
         }
         return find(model,procedure,color);
     }
-
+	
     private ArrayList<WorkData> datas=null;
 	
 

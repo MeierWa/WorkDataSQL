@@ -18,10 +18,21 @@ import modle.WorkData;
 public abstract class MindCommand implements Command {
 
     private DataContainer dc=null;
+	private boolean canUndo;
 
     public MindCommand(DataContainer dc){
         this.dc=dc;
     }
+
+	public void setCanUndo(boolean canUndo)
+	{
+		this.canUndo = canUndo;
+	}
+
+	public boolean isCanUndo()
+	{
+		return canUndo;
+	}
 
     public DataContainer getDc() {
         return dc;
@@ -29,6 +40,7 @@ public abstract class MindCommand implements Command {
 
     public void setDc(DataContainer dc) {
         this.dc = dc;
+		canUndo=false;
     }
 
 
