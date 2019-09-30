@@ -5,7 +5,6 @@ package command;/**
  * @modified
  */
 
-import m_interface.Command;
 import middleware.DataContainer;
 import modle.WorkData;
 
@@ -15,7 +14,7 @@ import modle.WorkData;
  * @Author mewCu
  * Date 2019/9/24 20:43
  */
-public class DeleteModelCommand extends MindCommand{
+public class DeleteModelCommand extends BaseMindCommand {
 
     private String model="";
     private WorkData wdSave =null;

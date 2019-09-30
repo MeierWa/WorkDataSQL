@@ -14,7 +14,7 @@ import modle.*;
  *@Author mewCu
  *Date 2019/9/25 21:24
  */
-public class DeleteProcedureCommand extends MindCommand {
+public class DeleteProcedureCommand extends BaseMindCommand {
 
     private String model="";
     private String procedure="";

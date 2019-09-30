@@ -5,9 +5,8 @@ package command;/**
  * @modified
  */
 
-import m_interface.Command;
+import mindinterface.AbstractCommand;
 import middleware.DataContainer;
-import modle.WorkData;
 
 /**
  *@ClassName MindCommand
@@ -15,12 +14,12 @@ import modle.WorkData;
  *@Author mewCu
  *Date 2019/9/24 20:46
  */
-public abstract class MindCommand implements Command {
+public abstract class BaseMindCommand implements AbstractCommand {
 
     private DataContainer dc=null;
 	private boolean canUndo;
 
-    public MindCommand(DataContainer dc){
+    public BaseMindCommand(DataContainer dc){
         this.dc=dc;
     }
 

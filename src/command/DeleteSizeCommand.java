@@ -2,7 +2,7 @@ package command;
 import middleware.*;
 import modle.*;
 
-public class DeleteSizeCommand extends MindCommand
+public class DeleteSizeCommand extends BaseMindCommand
 {
 
 	private String model="";

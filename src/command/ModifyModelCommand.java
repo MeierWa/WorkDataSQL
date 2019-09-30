@@ -2,7 +2,7 @@ package command;
 import middleware.*;
 import modle.*;
 
-public class ModifyModelCommand extends MindCommand
+public class ModifyModelCommand extends BaseMindCommand
 {
 	
 	private String oldModel="";

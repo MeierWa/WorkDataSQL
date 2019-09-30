@@ -13,7 +13,7 @@ import middleware.DataContainer;
  *@Author mewCu
  *Date 2019/9/26 19:49
  */
-public class DeleteDescriptionCommand extends MindCommand {
+public class DeleteDescriptionCommand extends BaseMindCommand {
     private String model="";
     private String description="";
 

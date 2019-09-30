@@ -6,7 +6,6 @@ package command;/**
  */
 
 import middleware.DataContainer;
-import modle.WorkData;
 
 /**
  *@ClassName AddProcedureCommand
@@ -14,7 +13,7 @@ import modle.WorkData;
  *@Author mewCu
  *Date 2019/9/25 21:09
  */
-public class AddProcedureCommand extends MindCommand {
+public class AddProcedureCommand extends BaseMindCommand {
 
     private String model="";
     private String procedure="";

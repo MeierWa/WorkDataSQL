@@ -1,6 +1,8 @@
 package command;
 
-public class ModifyProcedureCommand extends MindCommand
+import middleware.DataContainer;
+
+public class ModifyProcedureCommand extends BaseMindCommand
 {
 
 	@Override
@@ -16,6 +18,8 @@ public class ModifyProcedureCommand extends MindCommand
 	}
 	
 	
-	public ModifyProcedureCommand(
+	public ModifyProcedureCommand(DataContainer dc){
+		super(dc);
+	}
 	
 }

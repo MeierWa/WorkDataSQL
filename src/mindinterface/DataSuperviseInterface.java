@@ -1,4 +1,4 @@
-package m_interface;
+package mindinterface;
 import modle.*;
 
 /**

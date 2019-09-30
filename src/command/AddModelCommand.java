@@ -5,7 +5,6 @@ package command;/**
  * @modified
  */
 
-import m_interface.Command;
 import middleware.DataContainer;
 
 /**
@@ -14,7 +13,7 @@ import middleware.DataContainer;
  *@Author mewCu
  *Date 2019/9/24 19:00
  */
-public class AddModelCommand extends MindCommand {
+public class AddModelCommand extends BaseMindCommand {
 
     private String model="";
 

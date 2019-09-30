@@ -1,5 +1,5 @@
 package middleware;
-import m_interface.*;
+import mindinterface.*;
 import java.util.*;
 import modle.*;
 import command.*;
@@ -14,8 +14,9 @@ import command.*;
 public class DataAdmin implements InterReactive
 {
 	
-	private ArrayList<Command> commandQueue=null;
+	private ArrayList<AbstractCommand> commandQueue=null;
 	private WorkData selectAction=null;
+	private Procedure selecteProcedure=null;
 	private DataContainer dc=null;
 
 	public void setSelectAction(WorkData selectAction)
@@ -40,7 +41,7 @@ public class DataAdmin implements InterReactive
 	public void modifyModel(String newModel)
 	{
 		// TODO: Implement this method
-		Command cd=new 
+		//Command cd=new
 	}
 
 	@Override
@@ -91,7 +92,7 @@ public class DataAdmin implements InterReactive
 	public void deleteDescription()
 	{
 		// TODO: Implement this method
-		Command c=new DeleteDescriptionCommand(getSelectAction().getModel(),dc);
+		AbstractCommand c=new DeleteDescriptionCommand(getSelectAction().getModel(),dc);
 		c.execute();
 		commandQueue.add(c);
 	}
@@ -108,7 +109,7 @@ public class DataAdmin implements InterReactive
     {
         // TODO: Implement this method
 		WorkData wd=getSelectAction();
-		Command c=new AddProcedureCommand(wd.getModel(),sp,sc,dc);
+		AbstractCommand c=new AddProcedureCommand(wd.getModel(),sp,sc,dc);
 		c.execute();
 		commandQueue.add(c);
 }
@@ -117,7 +118,7 @@ public class DataAdmin implements InterReactive
 	public void addModel(String model)
 	{
 		// TODO: Implement this method
-		Command c=new AddModelCommand(model,dc);
+		AbstractCommand c=new AddModelCommand(model,dc);
 		c.execute();
 		setSelectAction(dc.find(model));
 		commandQueue.add(c);
@@ -127,14 +128,21 @@ public class DataAdmin implements InterReactive
 	public void addDescription(String des)
 	{
 		// TODO: Implement this method
-		Command c=new AddDescriptionCommand(getSelectAction().getModel(),des,dc);
+		AbstractCommand c=new AddDescriptionCommand(getSelectAction().getModel(),des,dc);
 		c.execute();
 		commandQueue.add(c);
 	}
 
 	public DataAdmin(DataContainer dc){
-		commandQueue=new ArrayList<Command>();
+		commandQueue=new ArrayList<AbstractCommand>();
 		this.dc=dc;
 	}
-	
+
+	public Procedure getSelecteProcedure() {
+		return selecteProcedure;
+	}
+
+	public void setSelecteProcedure(int index) {
+		this.selecteProcedure = getSelectAction().getProcedures().get(index);
+	}
 }

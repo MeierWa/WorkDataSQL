@@ -1,5 +1,5 @@
 package middleware;
-import m_interface.*;
+import mindinterface.*;
 import modle.*;
 import java.util.*;
 import java.util.regex.*;
@@ -12,8 +12,8 @@ import java.util.regex.*;
 public class DataContainer implements DataSuperviseInterface
 {
 
-	private static final boolean allowRepeatModel=false;
-	private static final boolean allowRepeatProcedureAndColor=false;
+	private static final boolean ALLOW_REPEATO_DEL =false;
+	private static final boolean ALLOW_REPEAT_PROCEDURE_AND_COLOR =false;
 
 	@Override
 	public WorkData add(String src_modle)
@@ -41,7 +41,7 @@ public class DataContainer implements DataSuperviseInterface
 						break;
 					}
 				}
-				if(!(addRepeat&&!allowRepeatProcedureAndColor)){
+				if(!(addRepeat&&!ALLOW_REPEAT_PROCEDURE_AND_COLOR)){
 					procedures.add(new Procedure(src_procedure,src_procedure_color));
 				}
 			}else{

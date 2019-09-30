@@ -1,7 +1,7 @@
 package command;
 import middleware.*;
 
-public class AddSizeCommand extends MindCommand
+public class AddSizeCommand extends BaseMindCommand
 {
 	
 	private String model="";
