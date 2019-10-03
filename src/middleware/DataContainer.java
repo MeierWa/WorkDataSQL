@@ -290,17 +290,21 @@ public class DataContainer implements DataSuperviseInterface
         }
         return find(model,procedure,color);
     }
-	
-    private ArrayList<WorkData> datas=null;
-	
 
-	
-	
-	
+	@Override
+	public Procedure clearSize(String src_modle, String procedure, String color) {
+    	Procedure pc=find(src_modle,procedure,color);
+    	if(pc!=null){
+    		pc.setSize("");
+		}
+		return pc;
+	}
+
+	private ArrayList<WorkData> datas=null;
+
+    public ArrayList<WorkData> getDatas(){return datas;}
+
 	public DataContainer(ArrayList<WorkData> datas){
 		this.datas=datas;
 	}
-	
-	
-	
 }

@@ -69,6 +69,7 @@ return size;
 			return;
 		}
 		getDc().add(getModel(),getProcedure(),getColor(),getSize());
+		setCanUndo(false);
 	}
 	
 	

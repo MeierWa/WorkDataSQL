@@ -14,14 +14,15 @@ public interface InterReactive
 	
 	void addProcedure(String sp,String sc);//添加工序(工序名称,颜色)
 	void modifyModel(String newModel);//修改mod名称
-	void deleteModel();
+	void deleteModel();//移除这个model
 	
 	void addSize(String s);//添加尺码
 	void modifyProcedure(String newProcedure,String newColor);//修改工序
 	void deleteProcedure();//删除工序
 	
 	void deleteSize(String s);//删除尺码
-	
+    void modifySize(String oldSize,String newSize);//修改size
+
 	WorkData selectModel(int index);//选择一个存在的model
 	Procedure selectProcedure(int index);//选择工序
 	

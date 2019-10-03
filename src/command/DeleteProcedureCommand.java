@@ -30,16 +30,17 @@ public class DeleteProcedureCommand extends BaseMindCommand {
     public void execute() {
         if(getDc().find(getModel(),getProcedure(),getColor())!=null) {
             saveProcedure=getDc().delete(getModel(), getProcedure(), getColor());
-			
+            setCanUndo(true);
         }
     }
 
     @Override
     public void undo() {
-		if(saveProcedure==null){
+		if(!isCanUndo()){
 			return;
 		}
         getDc().add(getModel(),saveProcedure);
+		setCanUndo(false);
     }
 
     public DeleteProcedureCommand(String model,String procedure,String color,DataContainer dc) {

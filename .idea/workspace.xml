@@ -5,51 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7aa4d03b-aa59-4b22-a012-8e2e6c5b51f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bin/META-INF/WorkDataSQL.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/command/AddDescriptionCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/command/AddSizeCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/command/BaseMindCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/command/DeleteDescriptionCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/command/DeleteSizeCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/command/ModifyModelCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/command/ModifyProcedureCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/mindinterface/AbstractCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/mindinterface/DataSuperviseInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/mindinterface/InterReactive.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mindinterface/AbstractCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/MindPrint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/adapter/CP.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/adapter/CP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/command/AddModelCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/command/AddModelCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/command/AddProcedureCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/command/AddProcedureCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/command/DeleteModelCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/command/DeleteModelCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/command/DeleteProcedureCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/command/DeleteProcedureCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/command/MindCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/m_interface/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/m_interface/DataSuperviseInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/m_interface/InterReactive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/command/DeleteSizeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/command/DeleteSizeCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/command/ModifyModelCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/command/ModifyModelCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/command/ModifyProcedureCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/command/ModifyProcedureCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/middleware/DataAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/middleware/DataAdmin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/middleware/DataContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/middleware/DataContainer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mindinterface/DataSuperviseInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/mindinterface/DataSuperviseInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mindinterface/InterReactive.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/mindinterface/InterReactive.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MindPrint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adapter/CP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/adapter/CP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/AddDescriptionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/AddDescriptionCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/AddModelCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/AddModelCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/AddProcedureCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/AddProcedureCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/AddSizeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/AddSizeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/DeleteDescriptionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/DeleteDescriptionCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/DeleteModelCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/DeleteModelCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/command/DeleteProcedureCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/DeleteProcedureCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/command/DeleteSizeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/DeleteSizeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/MindCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/BaseMindCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/command/ModifyModelCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ModifyModelCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/command/ModifyProcedureCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ModifyProcedureCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/m_interface/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/m_interface/DataSuperviseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mindinterface/DataSuperviseInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/m_interface/InterReactive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mindinterface/InterReactive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware/DataAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/DataAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware/DataContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/DataContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mindinterface/DataSuperviseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mindinterface/DataSuperviseInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mindinterface/InterReactive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mindinterface/InterReactive.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +160,9 @@
       <workItem from="1569462431489" duration="2522000" />
       <workItem from="1569498311943" duration="6042000" />
       <workItem from="1569838729360" duration="5680000" />
-      <workItem from="1569844458160" duration="7739000" />
+      <workItem from="1569844458160" duration="7793000" />
+      <workItem from="1569893894437" duration="2498000" />
+      <workItem from="1569924959532" duration="8216000" />
     </task>
     <task id="LOCAL-00001" summary="i">
       <created>1568727993926</created>
@@ -293,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569506144075</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="2019年9月30日 23:01:36">
+      <created>1569855718358</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1569855718358</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +304,7 @@
     <MESSAGE value="2019年9月25日 19:18:30" />
     <MESSAGE value="2019年9月26日 10:28:36" />
     <MESSAGE value="2019年9月26日 21:55:32" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019年9月26日 21:55:32" />
+    <MESSAGE value="2019年9月30日 23:01:36" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019年9月30日 23:01:36" />
   </component>
 </project>

@@ -32,9 +32,7 @@ public class ModifyModelCommand extends BaseMindCommand
 	public void execute()
 	{
 		// TODO: Implement this method
-		WorkData wd=getDc().find(getOldModel());
-		if(wd!=null){
-			wd.setModel(getNewModel());
+		if(getDc().replace_model(getOldModel(),getNewModel())!=null){
 			setCanUndo(true);
 		}
 	}
@@ -43,10 +41,11 @@ public class ModifyModelCommand extends BaseMindCommand
 	public void undo()
 	{
 		// TODO: Implement this method
-		WorkData wd=getDc().find(getNewModel());
-		if(isCanUndo()&&wd!=null){
-			wd.setModel(getOldModel());
+		if(!isCanUndo()){
+			return;
 		}
+		getDc().replace_model(getNewModel(),getOldModel());
+		setCanUndo(false);
 	}
 	
 	

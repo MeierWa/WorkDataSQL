@@ -14,15 +14,20 @@ import command.*;
 public class DataAdmin implements InterReactive
 {
 	
-	private ArrayList<AbstractCommand> commandQueue=null;
-	private WorkData selectAction=null;
-	private Procedure selecteProcedure=null;
-	private DataContainer dc=null;
+	private ArrayList<AbstractCommand> commandQueue;
+	private WorkData selectAction;
+	private Procedure selectProcedure;
+	private DataContainer dc;
 
 	public void setSelectAction(WorkData selectAction)
 	{
 		this.selectAction = selectAction;
 	}
+
+	public void setSelectProcedure(Procedure pc){
+	    this.selectProcedure=pc;
+    }
+
 
 	public WorkData getSelectAction()
 	{
@@ -41,51 +46,80 @@ public class DataAdmin implements InterReactive
 	public void modifyModel(String newModel)
 	{
 		// TODO: Implement this method
-		//Command cd=new
+		AbstractCommand cd=new ModifyModelCommand(getSelectAction().getModel(),newModel,dc);
+		cd.execute();
+		commandQueue.add(cd);
 	}
 
 	@Override
 	public void deleteModel()
 	{
 		// TODO: Implement this method
+        AbstractCommand cd=new DeleteModelCommand(getSelectAction().getModel(),dc);
+        cd.execute();
+        commandQueue.add(cd);
 	}
 
 	@Override
 	public void modifyProcedure(String newProcedure, String newColor)
 	{
 		// TODO: Implement this method
+        AbstractCommand cd=new ModifyProcedureCommand(getSelectAction().getModel(),getSelectProcedure().getName(),getSelectProcedure().getColor(),newProcedure,newColor,dc);
+        cd.execute();
+        commandQueue.add(cd);
 	}
 
 	@Override
 	public void deleteProcedure()
 	{
 		// TODO: Implement this method
+        AbstractCommand cd=new DeleteProcedureCommand(getSelectAction().getModel(),getSelectProcedure().getName(),getSelectProcedure().getColor(),dc);
+        cd.execute();
+        commandQueue.add(cd);
 	}
 
 	@Override
 	public void deleteSize(String s)
 	{
 		// TODO: Implement this method
+        AbstractCommand cd=new DeleteSizeCommand(getSelectAction().getModel(),getSelectProcedure().getName(),getSelectProcedure().getColor(),s,dc);
+        cd.execute();
+        commandQueue.add(cd);
 	}
 
-	@Override
+    @Override
+    public void modifySize(String oldSize, String newSize) {
+        AbstractCommand cd=new ModifySizeCommand(getSelectAction().getModel(),getSelectProcedure().getName(),getSelectProcedure().getColor(),oldSize,newSize,dc);
+        cd.execute();
+        commandQueue.add(cd);
+    }
+
+    @Override
 	public WorkData selectModel(int index)
 	{
 		// TODO: Implement this method
-		return null;
+        ArrayList<WorkData> datas=dc.getDatas();
+        setSelectAction(datas.get(index));
+		return datas.get(index);
 	}
 
 	@Override
 	public Procedure selectProcedure(int index)
 	{
 		// TODO: Implement this method
-		return null;
+        WorkData wd=getSelectAction();
+        List<Procedure> procedures=wd.getProcedures();
+        setSelectProcedure(procedures.get(index));
+		return procedures.get(index);
 	}
 
 	@Override
 	public void clearSize()
 	{
 		// TODO: Implement this method
+        AbstractCommand cd=new ClearSizeCommand(getSelectAction().getModel(),getSelectProcedure().getName(),getSelectProcedure().getColor(),dc);
+        cd.execute();
+        commandQueue.add(cd);
 	}
 
 	@Override
@@ -101,7 +135,9 @@ public class DataAdmin implements InterReactive
 	public void addSize(String s)
 	{
 		// TODO: Implement this method
-
+        AbstractCommand cd=new AddSizeCommand(getSelectAction().getModel(),getSelectProcedure().getName(),getSelectProcedure().getColor(),s,dc);
+        cd.execute();
+        commandQueue.add(cd);
 	}
 
     @Override
@@ -134,15 +170,15 @@ public class DataAdmin implements InterReactive
 	}
 
 	public DataAdmin(DataContainer dc){
-		commandQueue=new ArrayList<AbstractCommand>();
+		commandQueue=new ArrayList<>();
 		this.dc=dc;
 	}
 
-	public Procedure getSelecteProcedure() {
-		return selecteProcedure;
+	public Procedure getSelectProcedure() {
+		return selectProcedure;
 	}
 
-	public void setSelecteProcedure(int index) {
-		this.selecteProcedure = getSelectAction().getProcedures().get(index);
+	public void setSelectProcedure(int index) {
+		this.selectProcedure = getSelectAction().getProcedures().get(index);
 	}
 }

@@ -19,11 +19,11 @@ public interface DataSuperviseInterface
 	Procedure delete(String src_modle,String src_procedure,String src_color,String src_size);
 
 	WorkData find(String modle);//查
-	Procedure find(String modle,String procedure,String color); 
+	Procedure find(String modle,String procedure,String color);
 	
 	WorkData replace_model(String oldModel,String newModel);//改
 	Procedure replace_procedure(String model,String oldProcedure,String newProcedure,String oldColor,String newColor);
 	Procedure replace_szie(String model,String procedure,String color,String oldSize,String newSize);
 	
-	
+	Procedure clearSize(String src_modle,String procedure,String color);//清空size
 }
