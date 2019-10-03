@@ -1,8 +1,10 @@
 package middleware;
+import io.MindFileControl;
 import mindinterface.*;
 import java.util.*;
 import modle.*;
 import command.*;
+import thread.WriteDataThread;
 
 /**
  * @author  mewCu
@@ -184,5 +186,9 @@ public class DataAdmin implements InterReactive
 
 	public void setSelectProcedure(int index) {
 		this.selectProcedure = getSelectAction().getProcedures().get(index);
+	}
+
+	public void save(MindFileControl mfc){
+		new Thread(new WriteDataThread(mfc,dc.getDatas())).start();
 	}
 }

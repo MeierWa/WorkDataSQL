@@ -56,7 +56,7 @@ return size;
 	{
 		// TODO: Implement this method
 		Procedure pd=getDc().delete(getModel(),getProcedure(),getColor(),getSize());
-		if(pd!=null){
+ 		if(pd!=null){
 			setCanUndo(true);
 		}
 	}

@@ -7,11 +7,10 @@
     <list default="true" id="7aa4d03b-aa59-4b22-a012-8e2e6c5b51f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/InputSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/InputSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/command/AddProcedureCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/command/AddProcedureCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/middleware/DataAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/middleware/DataAdmin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/middleware/DataContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/middleware/DataContainer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/AddProcedureCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/AddProcedureCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/DeleteSizeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/DeleteSizeCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware/DataAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/DataAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware/DataContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/DataContainer.java" afterDir="false" />
     </list>
@@ -112,6 +111,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Te" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Te" />
+      <module name="WorkDataSQL" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="myVC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="myVC" />
       <module name="WorkDataSQL" />
@@ -122,6 +128,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Te" />
         <item itemvalue="Application.myVC" />
       </list>
     </recent_temporary>
@@ -153,7 +160,8 @@
       <workItem from="1569844458160" duration="7793000" />
       <workItem from="1569893894437" duration="2498000" />
       <workItem from="1569924959532" duration="8216000" />
-      <workItem from="1570062008594" duration="7910000" />
+      <workItem from="1570062008594" duration="8521000" />
+      <workItem from="1570101158479" duration="10595000" />
     </task>
     <task id="LOCAL-00001" summary="i">
       <created>1568727993926</created>
@@ -274,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570062066430</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="2019年10月3日 08:20:49">
+      <created>1570082533702</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1570082533702</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -15,6 +15,7 @@ import middleware.DataHelper;
 import modle.Procedure;
 import modle.WorkData;
 import thread.ReadDataThread;
+import thread.WriteDataThread;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,16 +40,17 @@ public class InputSystem {
     private InputSystem is;
     private ArrayList<WorkData> workDatas;
     private DataHelper dh;
+    private MindFileControl mfc = null;
     private DataAdmin dataAdmin;
     private StringBuilder stringBuilder,checkString;
     private int cxk;
-    private Pattern cPattern11,cPattern12,cPattern22;
+    private Pattern cPattern10,cPattern11,cPattern12,cPattern20,cPattern22,cPattern31,cPattern35;
     private Matcher cMatcher;
-    public static final int BREAK=1,MISMATCH=2;
+    public static final int BREAK=1,MISMATCH=2,SAVE=3;
 
     public void run(){
         while(true){
-            System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.print("\n\n\n\n\n");
             stringBuilder.delete(0,stringBuilder.length());
             checkString.delete(0,checkString.length());
             if(dataAdmin.getSelectAction()!=null){
@@ -87,10 +89,9 @@ public class InputSystem {
                         System.out.println(""+i+"."+workDatas.get(i).getModel());
                     }
                     if(workDatas.isEmpty()||workDatas.size()==0){
-                        System.out.println("列表为空，按任意按键返回");
+                        System.out.println("列表为空");
                         jd=0;
                         action=0;
-                        scanner.next();
                     }else {
                         System.out.println("输入model序号");
                         checkString.append(scanner.next());
@@ -110,7 +111,17 @@ public class InputSystem {
                     break;
                 case 10://
                     System.out.println("1删除model 2创建procedure 3修改model 4选择一个procedure");
-                    action=scanner.nextInt();
+                    checkString.append(scanner.next());
+                    cxk=check(checkString.toString());
+                    if(cxk==BREAK){
+                        jd=action=0;
+                        break;
+                    }else if(cxk==SAVE){
+                        dataAdmin.save(mfc);
+                    }else if(cxk==MISMATCH){
+                        break;
+                    }
+                    action=Integer.parseInt(checkString.toString());
                     jd++;
                     break;
                 case 21://
@@ -135,17 +146,32 @@ public class InputSystem {
                         partition=s.indexOf("，");
                     }
                     dataAdmin.addProcedure(s.substring(0,partition),s.substring(partition+1));
-                    jd=1;
+                    jd=2;
                     action=0;
                     break;
                 case 23://
                     System.out.println("输入新的model名称");
-                    dataAdmin.modifyModel(scanner.next());
+                    checkString.append(scanner.next());
+                    cxk=check(checkString.toString());
+                    if(cxk==BREAK){
+                        jd=1;
+                        action=0;
+                        break;
+                    }else if(cxk==MISMATCH) {
+                        break;
+                    }
+                    dataAdmin.modifyModel(checkString.toString());
                     jd=1;
                     action=0;
                     break;
                 case 24://
                     List<Procedure> pds=dataAdmin.getSelectAction().getProcedures();
+                    if(dataAdmin.getSelectAction().getProcedures()==null||dataAdmin.getSelectAction().getProcedures().isEmpty()){
+                        System.out.println("列表为空");
+                        jd=1;
+                        action=0;
+                        break;
+                    }
                     for(int i=0;i<pds.size();i++){
                         System.out.println(""+i+"."+pds.get(i).getName()+"_"+pds.get(i).getColor());
                     }
@@ -160,7 +186,7 @@ public class InputSystem {
                         break;
                     }
                     int index=Integer.parseInt(checkString.toString());
-                    if(!dataAdmin.getSelectAction().getProcedures().isEmpty()&&index>=0&&index<dataAdmin.getSelectAction().getProcedures().size()){
+                    if(index>=0&&index<dataAdmin.getSelectAction().getProcedures().size()){
                         dataAdmin.setSelectProcedure(index);
                         jd=2;
                         action=0;
@@ -168,18 +194,48 @@ public class InputSystem {
                     break;
                 case 20://
                     System.out.println("1添加size 2修改procedure 3删除procedure 4删除size 5修改size 6清空size");
-                    action=scanner.nextInt();
+                    checkString.append(scanner.next());
+                    cxk=check(checkString.toString());
+                    if(cxk==BREAK){
+                        jd=1;
+                        action=0;
+                        break;
+                    }else if(cxk==SAVE){
+                        dataAdmin.save(mfc);
+                        break;
+                    }else if(cxk==MISMATCH){
+                        break;
+                    }
+                    action=Integer.parseInt(checkString.toString());
                     jd++;
                     break;
                 case 31://
                     System.out.println("输入要添加的size");
-                    dataAdmin.addSize(scanner.next());
+                    checkString.append(scanner.next());
+                    cxk=check(checkString.toString());
+                    if(cxk==BREAK){
+                        jd=2;
+                        action=0;
+                        break;
+                    }else if(cxk==MISMATCH){
+                        break;
+                    }
+                    dataAdmin.addSize(checkString.toString());
                     jd=2;
                     action=0;
                     break;
                 case 32://
                     System.out.println("输入新的procedure名称(例如：接里布,黑色）");
-                    String s2=scanner.next();
+                    checkString.append(scanner.next());
+                    cxk=check(checkString.toString());
+                    if(cxk==BREAK){
+                        jd=2;
+                        action=0;
+                        break;
+                    }else if(cxk==MISMATCH){
+                        break;
+                    }
+                    String s2=checkString.toString();
                     int partition2=s2.indexOf(",");
                     if(partition2==-1){
                         partition2=s2.indexOf("，");
@@ -195,13 +251,31 @@ public class InputSystem {
                     break;
                 case 34://
                     System.out.println("输入要删除的size");
-                    dataAdmin.deleteSize(scanner.next());
+                    checkString.append(scanner.next());
+                    cxk=check(checkString.toString());
+                    if(cxk==BREAK){
+                        jd=2;
+                        action=0;
+                        break;
+                    }else if(cxk==MISMATCH){
+                        break;
+                    }
+                    dataAdmin.deleteSize(checkString.toString());
                     jd=2;
                     action=0;
                     break;
                 case 35://
                     System.out.println("输入要删除的size和新的size，例如：39，10m");
-                    String s3=scanner.next();
+                    checkString.append(scanner.next());
+                    cxk=check(checkString.toString());
+                    if(cxk==BREAK){
+                        jd=2;
+                        action=0;
+                        break;
+                    }else if(cxk==MISMATCH){
+                        break;
+                    }
+                    String s3=checkString.toString();
                     int partition3=s3.indexOf(",");
                     if(partition3==-1){
                         partition3=s3.indexOf("，");
@@ -228,7 +302,7 @@ public class InputSystem {
         workDatas=new ArrayList<WorkData>();
         dh=new DataHelper();
         System.out.println(">>>>文件验证...");
-        MindFileControl mfc = null;
+
         File f1=new File(CP.PATH_NAME_PC+"\\"+ CP.FILE_NAME);
         File f2=new File(CP.PATH_NAME_PHONE+"/"+ CP.FILE_NAME);
         if(f1.exists()){
@@ -261,9 +335,13 @@ public class InputSystem {
         stringBuilder.append("hello mewCu!");
         checkString=new StringBuilder();
         checkString.append("i'm come to checking!");
+        cPattern10=Pattern.compile("^[1234]$");
         cPattern11=Pattern.compile("^[A-Za-z0-9]+$");
         cPattern12=Pattern.compile("^[0-9]+$");
+        cPattern20=Pattern.compile("^[123456]$");
         cPattern22=Pattern.compile("^[\\u4e00-\\u9fa5]+[,，]{1}[\\u4e00-\\u9fa5]+$");
+        cPattern31=Pattern.compile("^[1-9][0-9]*([.][5])?[a-zA-Z]?$");
+        cPattern35=Pattern.compile("^[1-9][0-9]*([.][5])?[a-zA-Z]?[,，][1-9][0-9]*([.][5])?[a-zA-Z]?$");
         /**AB式流程 A为阶段，B为操作
          * 00为初始阶段
          * 11创建model 12选择一个model
@@ -276,16 +354,35 @@ public class InputSystem {
         if(s.equals("up")){
             return BREAK;
         }
+        if(s.equals("save")){
+            return SAVE;
+        }
         if(jd==1){
             if(action==1&&!(cMatcher=cPattern11.matcher(s)).find()) {
                 return MISMATCH;
             }else if(action==2&&!(cMatcher=cPattern12.matcher(s)).find()){
+                return MISMATCH;
+            }else if(action==0&&!(cMatcher=cPattern10.matcher(s)).find()){
                 return MISMATCH;
             }
         }else if(jd==2){
             if(action==2&&!(cMatcher=cPattern22.matcher(s)).find()){
                 return MISMATCH;
             }else if(action==4&&!(cMatcher=cPattern12.matcher(s)).find()){
+                return MISMATCH;
+            }else if(action==1&&!(cMatcher=cPattern11.matcher(s)).find()) {
+                return MISMATCH;
+            }else if(action==0&&!(cMatcher=cPattern20.matcher(s)).find()){
+                return MISMATCH;
+            }
+        }else if(jd==3){
+            if(action==1&&!(cMatcher=cPattern31.matcher(s)).find()){
+                return MISMATCH;
+            }else if(action==2&&!(cMatcher=cPattern22.matcher(s)).find()){
+                return MISMATCH;
+            }else if(action==4&&!(cMatcher=cPattern31.matcher(s)).find()){
+                return MISMATCH;
+            }else if(action==5&&!(cMatcher=cPattern35.matcher(s)).find()){
                 return MISMATCH;
             }
         }

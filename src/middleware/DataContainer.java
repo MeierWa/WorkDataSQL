@@ -57,7 +57,6 @@ public class DataContainer implements DataSuperviseInterface
 				procedures=new ArrayList<Procedure>();
 				procedures.add(new Procedure(src_procedure,src_procedure_color));
 				data.setProcedures(procedures);
-				datas.add(data);
 			}
 		}else{
 			data=new WorkData();
@@ -68,7 +67,7 @@ public class DataContainer implements DataSuperviseInterface
 			datas.add(data);
 		}
 
-
+		System.out.println(datas.size());
 		return find(src_modle,src_procedure,src_procedure_color);
 	}
 
@@ -94,13 +93,14 @@ public class DataContainer implements DataSuperviseInterface
 				}else{
 					pd=new Procedure(src_procedure,src_procedure_color);
 					pd.setSize(src_size);
+					procedures.add(pd);
 				}
-				procedures.add(pd);
 			}else{
 				procedures=new ArrayList<Procedure>();
 				pd=new Procedure(src_procedure,src_procedure_color);
 				pd.setSize(src_size);
 				procedures.add(pd);
+				data.setProcedures(procedures);
 			}
 		}else{
 			data=new WorkData();
@@ -109,9 +109,9 @@ public class DataContainer implements DataSuperviseInterface
 			pd=new Procedure(src_procedure,src_procedure_color);
 			pd.setSize(src_size);
 			procedures.add(pd);
+			data.setProcedures(procedures);
+			datas.add(data);
 		}
-		data.setProcedures(procedures);
-		datas.add(data);
 		return find(src_modle,src_procedure,src_procedure_color);
 	}
 
@@ -196,28 +196,59 @@ public class DataContainer implements DataSuperviseInterface
 		Pattern pattern=null;
 		Matcher matcher=null;
 		StringBuilder rex=new StringBuilder();
+		String result="",result2="";
 		if(wd==null){
 			return null;
 		}
 		Procedure pd=find(src_modle,src_procedure,src_color);
 		if(pd!=null){
 			//匹配size "[1-9][0-9]*([.][5])?[a-zA-Z]?"
-			String sc=pd.getColor();
-			if(sc.contains(src_color)){
+			String ss=pd.getSize();
+			if(ss.contains(src_size)){
 				//生成rex
-				for(int i=0;i<src_color.length();i++){
+				for(int i=0;i<src_size.length();i++){
 					rex.append("[");
-					rex.append(src_color.charAt(i));
+					rex.append(src_size.charAt(i));
 					rex.append("]");
 				}
 				rex.append("[a-zA-Z]?");
 				//找一个group
 				pattern=Pattern.compile(rex.toString());
-				matcher=pattern.matcher(sc);
+				matcher=pattern.matcher(ss);
 				//替换原字符
 				if(matcher.find()){
-					sc.replace(matcher.group(),"");
-					pd.setSize(sc);
+					int st=ss.indexOf(matcher.group());
+					int se=st+src_size.length();
+					if(st>0){
+						result=ss.substring(0,st);
+					}else {
+						se++;
+					}
+					if(se<ss.length()){
+						result=result+ss.substring(se);
+					}else {
+						result=result.substring(0,result.length()-1);
+					}
+					//去双下划线
+					matcher=p2.matcher(result);
+					if(matcher.find()){
+						int st2=result.indexOf(matcher.group());
+						int se2=st2+2;
+						if(st2>0){
+							if(se2<result.length()){
+								result2=result.substring(0,st2+1);
+								result2=result2+result.substring(se2);
+							}else {
+								result2=result.substring(0,st2);
+							}
+						}else {
+							result2=result.substring(se2);
+						}
+						pd.setSize(result2);
+					}else {
+						pd.setSize(result);
+					}
+
 				}else{
 					return null;
 				}
@@ -300,7 +331,7 @@ public class DataContainer implements DataSuperviseInterface
                 rex.append("["+chars[i]+"]");
             }
             rex.append("[a-zA-Z]?");
-            pattern2=Pattern.compile(rex.toString());;
+            pattern2=Pattern.compile(rex.toString());
             matcher2=pattern2.matcher(pd.getSize());
             if(matcher2.find()){
                 //替换
@@ -320,10 +351,12 @@ public class DataContainer implements DataSuperviseInterface
 	}
 
 	private ArrayList<WorkData> datas=null;
+    private Pattern p2=null;
 
     public ArrayList<WorkData> getDatas(){return datas;}
 
 	public DataContainer(ArrayList<WorkData> datas){
 		this.datas=datas;
+		p2=Pattern.compile("([_][_])+");
 	}
 }
