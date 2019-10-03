@@ -12,13 +12,20 @@ import java.util.regex.*;
 public class DataContainer implements DataSuperviseInterface
 {
 
-	private static final boolean ALLOW_REPEATO_DEL =false;
+	private static final boolean ALLOW_REPEAT_MODEL =false;
 	private static final boolean ALLOW_REPEAT_PROCEDURE_AND_COLOR =false;
 
 	@Override
 	public WorkData add(String src_modle)
 	{
 		// TODO: Implement this method
+		WorkData wd;
+		if(!ALLOW_REPEAT_MODEL){
+			wd=find(src_modle);
+			if(wd!=null){
+				return wd;
+			}
+		}
 		WorkData data=new WorkData();
 		data.setModel(src_modle);
 		datas.add(data);
@@ -43,19 +50,25 @@ public class DataContainer implements DataSuperviseInterface
 				}
 				if(!(addRepeat&&!ALLOW_REPEAT_PROCEDURE_AND_COLOR)){
 					procedures.add(new Procedure(src_procedure,src_procedure_color));
+				}else {
+					return null;
 				}
 			}else{
 				procedures=new ArrayList<Procedure>();
 				procedures.add(new Procedure(src_procedure,src_procedure_color));
+				data.setProcedures(procedures);
+				datas.add(data);
 			}
 		}else{
 			data=new WorkData();
 			data.setModel(src_modle);
 			procedures=new ArrayList<Procedure>();
 			procedures.add(new Procedure(src_procedure,src_procedure_color));
+			data.setProcedures(procedures);
+			datas.add(data);
 		}
-		data.setProcedures(procedures);
-		datas.add(data);
+
+
 		return find(src_modle,src_procedure,src_procedure_color);
 	}
 
@@ -72,7 +85,12 @@ public class DataContainer implements DataSuperviseInterface
 			pd=find(src_modle,src_procedure,src_procedure_color);
 			if(procedures!=null){
 				if(pd!=null){
-					pd.setSize(pd.getSize()+"_"+src_size);//添加成功(最长距离)
+					//添加成功(最长距离)
+					if(pd.getSize().isEmpty()||pd.getSize().length()==0){
+						pd.setSize(src_size);
+					}else {
+						pd.setSize(pd.getSize()+"_"+src_size);
+					}
 				}else{
 					pd=new Procedure(src_procedure,src_procedure_color);
 					pd.setSize(src_size);
@@ -199,6 +217,7 @@ public class DataContainer implements DataSuperviseInterface
 				//替换原字符
 				if(matcher.find()){
 					sc.replace(matcher.group(),"");
+					pd.setSize(sc);
 				}else{
 					return null;
 				}
@@ -285,7 +304,7 @@ public class DataContainer implements DataSuperviseInterface
             matcher2=pattern2.matcher(pd.getSize());
             if(matcher2.find()){
                 //替换
-                pd.getSize().replace(matcher2.group(),newSize);
+                pd.setSize(pd.getSize().replace(matcher2.group(),newSize));
             }
         }
         return find(model,procedure,color);

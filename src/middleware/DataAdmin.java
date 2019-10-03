@@ -56,6 +56,8 @@ public class DataAdmin implements InterReactive
 	{
 		// TODO: Implement this method
         AbstractCommand cd=new DeleteModelCommand(getSelectAction().getModel(),dc);
+        setSelectProcedure(null);
+        setSelectAction(null);
         cd.execute();
         commandQueue.add(cd);
 	}
@@ -74,6 +76,7 @@ public class DataAdmin implements InterReactive
 	{
 		// TODO: Implement this method
         AbstractCommand cd=new DeleteProcedureCommand(getSelectAction().getModel(),getSelectProcedure().getName(),getSelectProcedure().getColor(),dc);
+        setSelectProcedure(null);
         cd.execute();
         commandQueue.add(cd);
 	}
@@ -148,6 +151,7 @@ public class DataAdmin implements InterReactive
 		AbstractCommand c=new AddProcedureCommand(wd.getModel(),sp,sc,dc);
 		c.execute();
 		commandQueue.add(c);
+		setSelectProcedure(dc.find(getSelectAction().getModel(),sp,sc));
 }
 
 	@Override

@@ -26,12 +26,18 @@ public class AddProcedureCommand extends BaseMindCommand {
 
     @Override
     public void execute() {
-        getDc().add(getModel(), getProcedure(), getColor());
+        if(getDc().add(getModel(), getProcedure(), getColor())!=null){
+            setCanUndo(true);
+        }else {
+            setCanUndo(false);
+        }
     }
 
     @Override
     public void undo() {
-        getDc().delete(getModel(), getProcedure(), getColor());
+        if(isCanUndo()){
+           getDc().delete(getModel(), getProcedure(), getColor());
+        }
     }
 
     public AddProcedureCommand(String model,String procedure,String color,DataContainer dc) {
