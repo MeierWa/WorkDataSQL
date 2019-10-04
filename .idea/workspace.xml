@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7aa4d03b-aa59-4b22-a012-8e2e6c5b51f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/InputSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/InputSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/middleware/DataAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/middleware/DataAdmin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/middleware/DataContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/middleware/DataContainer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/DeleteSizeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/DeleteSizeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware/DataAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/DataAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware/DataContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/DataContainer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +70,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AndroidTest" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -161,7 +155,8 @@
       <workItem from="1569893894437" duration="2498000" />
       <workItem from="1569924959532" duration="8216000" />
       <workItem from="1570062008594" duration="8521000" />
-      <workItem from="1570101158479" duration="10595000" />
+      <workItem from="1570101158479" duration="10656000" />
+      <workItem from="1570172555623" duration="1470000" />
     </task>
     <task id="LOCAL-00001" summary="i">
       <created>1568727993926</created>
@@ -289,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570082533702</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="2019年10月3日 22:11:20">
+      <created>1570111892446</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1570111892446</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,6 +321,7 @@
     <MESSAGE value="2019年9月26日 21:55:32" />
     <MESSAGE value="2019年9月30日 23:01:36" />
     <MESSAGE value="2019年10月3日 08:20:49" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019年10月3日 08:20:49" />
+    <MESSAGE value="2019年10月3日 22:11:20" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019年10月3日 22:11:20" />
   </component>
 </project>

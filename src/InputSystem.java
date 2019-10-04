@@ -118,6 +118,7 @@ public class InputSystem {
                         break;
                     }else if(cxk==SAVE){
                         dataAdmin.save(mfc);
+                        break;
                     }else if(cxk==MISMATCH){
                         break;
                     }
