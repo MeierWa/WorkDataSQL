@@ -1,3 +1,2 @@
-# WorkDataSQL
-a demo for learn upload project to Github
+upload project to Github
 
